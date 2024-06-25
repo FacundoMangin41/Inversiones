@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.sideBar{
+    display: flex;
+    gap: 1rem;
+    background-color: var(--BarraNavegacion);
+    /* box-shadow: 0px 0px 44px 6px var(--SombrasBarraNavegacion) inset;
+    -webkit-box-shadow: 0px 0px 44px 6px var(--SombrasBarraNavegacion) inset;
+    -moz-box-shadow: 0px 0px 44px 6px var(--SombrasBarraNavegacion) inset; */
+    border-bottom: 1px solid var(--recuadroContenedores) !important;
+    width: 100vw;
+    padding-right: 2.5rem !important;
+}
+
+.layoutsidebar{
+    margin: 1rem 0;
+}
+
+.BotonHamburguesacolor{
+padding: 0.35rem !important;
+background-color: #fff !important;
+border-radius: 50% !important;
+min-width: 30px !important;
+}
+.BotonHamburguesacolor:hover{
+    background-color: #ebebeb !important;
+    }
+
+.imagenPerfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0 0 ;
+    text-align: center;
+    flex-direction: column;
+    font-size: 1rem;
+}
+
+.imagenPerfil a{
+    border-radius: 50%;
+}
+
+.imagenPerfil h1{
+    font-size: 2rem;
+    margin:1.5rem 0 0;
+    color: var(--letrasSidebar);
+}
+
+.imagenPerfil img{
+    width: clamp(1rem , 11rem, 90vw);
+    border-radius: 50%;
+    border: 2px solid var(--letrasSidebar);
+}
+    
+.drawerItem{
+    width: 100%;  /* Toma el valor de todo el sidebar  */
+    color: transparent;
+}
+
+
+
+
+
+.botonHamburguesaCelular{
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .botonHamburguesaCelular{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+}
+
+.BotonHamburguesa{
+    border-radius: 50%;
+}
+
+.divider{
+    background-color: var(--divider);
+}
+
+.botonDescargarPdfSidebar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonDescargarPdfSidebar p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    color: var(--letrasSidebar);
+    padding: 0.6rem;
+    margin: 0.3rem 0 1rem;
+    background-color: var(--hoverBotonPortada);
+    border-radius: 7px;
+    cursor: pointer;
+    border: 1px solid var(--letrasSidebar);
+    transition: var(--transition);
+}
+
+.botonDescargarPdfSidebar p:hover{
+    background-color: var(--botonPortada);
+}
+
+
+/* 
+----------------------------------------------------
+----------------Color Sidebar Abierta
+---------------------------------------------------- */
+.css-wf16b5{
+    background-color: var(--BarraNavegacion) !important;
+}
+
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper{
+    background-color: var(--BarraNavegacion) !important;
+}
+
+.drawerItem:hover{
+    background-color: var(--hoverBarraNavegacion)!important;
+}
+/*----------------------------------------------------
+---------------------------------------------------- */
+
+.sidebarPc {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 1200px) {
+    .sidebarPc {
+        display: none;
+      }
+
+}
+  
+  .portafolioSidebarPc {
+    margin-right: auto; /* Empuja el portafolio a la izquierda */
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+  
+  .buscadoresSidebarPc {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;
+    text-align: center;
+    text-decoration: none !important;
+    margin: 0 auto; /* Centra el contenedor en la página */
+    width: 100vw; /* Asegura que ocupe todo el ancho disponible */
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    
+  }
+  
+  .buscadoresSidebarPc-link {
+    text-decoration: none; /* Quita el subrayado */
+    margin: 0 10px; /* Espaciado entre los enlaces */
+    color: inherit; /* Hereda el color del elemento padre */
+    transition: var(--transition);
+  }
+
+
+  .buscadoresSidebarPc-link.active {
+    background-color: #407c7c; /* Color de fondo cuando está activo */
+    font-weight: bold; /* O cualquier otra estilización adicional */
+    border-radius: 3px;
+    padding: 0.36rem;
+  }

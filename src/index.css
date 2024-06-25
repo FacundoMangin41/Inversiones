@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --letrasSidebar: rgb(231, 231, 231); 
+  --letrasPortada: #dfdfdf;
+  --botonPortada: #407c7c;
+  --hoverBotonPortada: #327070;
+  --bordeImagenesProyecto: #aaaaaa;
+  --botonLetras: #fff;
+  --botonGithub: ;
+  --BarraNavegacion: #192139;
+  --hoverBarraNavegacion: #242d4d;
+  --SombrasBarraNavegacion: transparent;
+  --recuadroContenedores: #dfdfdf;
+  --divider: #adadad;
+  --recuadroSobreMi: #00000059;
+  --fondo: #212e36;
+  --tablaValores: #82caca;
+
+  --fondoContenedoresFormulario: #ebebeb;
+
+  --transition: all 0.25s ease-out;
+  --transition5s: all 0.25s ease-out;
+}
+
+h1{
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+p{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: var(--fondo);
+  /* Color de toda la pagina */
+  /* background: radial-gradient(79.43% 251.58% at 23.18% 73.07%, #0142a0 0, #0a0b1f 44.41%, #0c0b24 56.46%, #080518 69.58%, #070416 100%, #020113 0); */
+  /* background: radial-gradient(79.43% 251.58% at 23.18% 73.07%, #010027 0, #050231 100%, #060322 69.58%, #101034 56.46%, #0f133a 44.41%, #0142a0 0); */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Estilos para WebKit (Safari, Chrome, Opera) */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--letrasPortada); /* Color del fondo de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--botonPortada); /* Color del botón de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--hoverBotonPortada); /* Cambio de color al pasar el cursor */
+}
+
+@media (max-width: 1200px) {
+  ::-webkit-scrollbar {
+    width: 4px; /* Ancho de la barra de desplazamiento */
+  }
+
+  body {
+    background-attachment: local;
+
+  }
+
+}

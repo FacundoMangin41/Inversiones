@@ -1,0 +1,8 @@
+.PagesInicio{
+    display: flex;
+    justify-content: center;
+}
+
+.tablaInversiones{
+    width: 94%;
+}
