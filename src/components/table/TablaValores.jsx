@@ -8,8 +8,14 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Close';
 import { Chip } from '@mui/material';
+import './css/tablaValores.css';
 
 export default function TablaValores() {
+
+  const handleDeleteAllRows = () => {
+    setRows([]);
+  };
+
   const [rows, setRows] = useState(() => {
     const savedRows = localStorage.getItem('rows');
     return savedRows ? JSON.parse(savedRows) : [];
@@ -33,7 +39,7 @@ export default function TablaValores() {
     }));
 
     const worksheet = XLSX.utils.json_to_sheet(exportRows);
-    
+
     const columnWidths = [
       { wch: 15 },
       { wch: 10 },
@@ -143,9 +149,10 @@ export default function TablaValores() {
 
 
   const columns = [
-    { field: 'fecha', headerName: 'Fecha', width: 150, editable: true,      },
+    { field: 'fecha', headerName: 'Fecha', width: 150, editable: true, },
     { field: 'moneda', headerName: 'Moneda', width: 130, editable: true },
-    { field: 'invertido', headerName: 'USDT Invertido', width: 230, editable: true,
+    {
+      field: 'invertido', headerName: 'USDT Invertido', width: 230, editable: true,
       renderCell: (params) => (
         <Chip
           label={params.value}
@@ -158,8 +165,9 @@ export default function TablaValores() {
           }}
         />
       ),
-     },
-    { field: 'final', headerName: 'USDT Final', width: 230, editable: true,
+    },
+    {
+      field: 'final', headerName: 'USDT Final', width: 230, editable: true,
       renderCell: (params) => (
         <Chip
           label={params.value}
@@ -172,10 +180,11 @@ export default function TablaValores() {
           }}
         />
       ),
-     },
+    },
     { field: 'facturacionTotal', headerName: 'Facturacion Total (con impuestos)', width: 310, editable: true },
     { field: 'tasaTramitacion', headerName: 'Tasa de tramitacion (descuentos)', width: 350, editable: true },
-    { field: 'gananciaDiaria', headerName: 'Ganancia Diaria', width: 180, editable: true,
+    {
+      field: 'gananciaDiaria', headerName: 'Ganancia Diaria', width: 180, editable: true,
       renderCell: (params) => (
         <Chip
           label={params.value}
@@ -188,7 +197,7 @@ export default function TablaValores() {
           }}
         />
       ),
-     },
+    },
     {
       field: 'actions',
       headerName: 'Actions',
@@ -236,9 +245,9 @@ export default function TablaValores() {
 
   return (
     <Box sx={{ height: '76vh', width: '100%' }}>
-      <Button 
-        variant="contained" 
-        color="primary" 
+      <Button className='botonTabla'
+        variant="contained"
+        color="primary"
         onClick={handleExport}
         style={{ marginBottom: 10 }}
       >
@@ -252,13 +261,23 @@ export default function TablaValores() {
         id="import-file"
       />
       <label htmlFor="import-file">
-        <Button
+        <Button className='botonTabla'
           variant="contained"
           component="span"
           color="secondary"
           style={{ marginBottom: 10, marginLeft: 10 }}
         >
           Importar Excel
+        </Button>
+      </label>
+      <label htmlFor="import-file">
+        <Button className='botonTabla'
+          variant="contained"
+          color="secondary"
+          onClick={handleDeleteAllRows}
+          style={{ marginBottom: 10, marginLeft: 10, backgroundColor: '#FF0000', color: '#FFFFFF', }}
+        >
+          Eliminar Lista
         </Button>
       </label>
       <DataGrid
