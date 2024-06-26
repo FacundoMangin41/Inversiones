@@ -39,6 +39,8 @@
   --recuadroSobreMi: #00000059;
   --fondo: #212e36;
   --tablaValores: #82caca;
+  --botonConfirmarEliminar: #239e12;
+  --botonCancelarEliminar:#d33;
 
   --fondoContenedoresFormulario: #ebebeb;
 
@@ -75,7 +77,6 @@ body {
   /* background: radial-gradient(79.43% 251.58% at 23.18% 73.07%, #0142a0 0, #0a0b1f 44.41%, #0c0b24 56.46%, #080518 69.58%, #070416 100%, #020113 0); */
   /* background: radial-gradient(79.43% 251.58% at 23.18% 73.07%, #010027 0, #050231 100%, #060322 69.58%, #101034 56.46%, #0f133a 44.41%, #0142a0 0); */
   background-size: cover;
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -101,9 +102,4 @@ body {
   ::-webkit-scrollbar {
     width: 4px; /* Ancho de la barra de desplazamiento */
   }
-
-  body {
-    background-attachment: local !important;
-  }
-
 }

@@ -9,11 +9,30 @@ import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Close';
 import { Chip } from '@mui/material';
 import './css/tablaValores.css';
+import Swal from 'sweetalert2';
 
 export default function TablaValores() {
 
   const handleDeleteAllRows = () => {
-    setRows([]);
+    Swal.fire({
+      title: "Eliminar registro de datos",
+      text: "Se eliminara permanentemente todo el registro de datos que tienes almacenado ¿Estas seguro de hacerlo?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "var(--botonConfirmarEliminar)",
+      cancelButtonColor: "var(--botonCancelarEliminar)",
+      confirmButtonText: "Elimínar",
+      cancelButtonText: "Cancelar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setRows([]);
+        Swal.fire({
+          title: "¡Eliminado!",
+          text: "El restro de inversiones fue Eliminado",
+          icon: "success"
+        });
+      }
+    });
   };
 
   const [rows, setRows] = useState(() => {
@@ -28,14 +47,14 @@ export default function TablaValores() {
   }, [rows]);
 
   const handleExport = () => {
-    const exportRows = rows.map(({ id, fecha, moneda, invertido, final, facturacionTotal, tasaTramitacion, gananciaDiaria }) => ({
+    const exportRows = rows.map(({ id, fecha, moneda, invertido, final, gananciaDiaria, facturacionTotal, tasaTramitacion }) => ({
       fecha,
       moneda,
       invertido,
       final,
+      gananciaDiaria,
       facturacionTotal,
-      tasaTramitacion,
-      gananciaDiaria
+      tasaTramitacion
     }));
 
     const worksheet = XLSX.utils.json_to_sheet(exportRows);
@@ -45,9 +64,9 @@ export default function TablaValores() {
       { wch: 10 },
       { wch: 20 },
       { wch: 20 },
+      { wch: 20 },
       { wch: 30 },
       { wch: 35 },
-      { wch: 20 },
     ];
     worksheet['!cols'] = columnWidths;
 
@@ -118,7 +137,25 @@ export default function TablaValores() {
   };
 
   const handleDeleteClick = (id) => {
-    setRows((prevRows) => prevRows.filter((row) => row.id !== id));
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "¡No podrás revertir esto!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "var(--botonConfirmarEliminar)",
+      cancelButtonColor: "var(--botonCancelarEliminar)",
+      confirmButtonText: "Elimínar",
+      cancelButtonText: "Cancelar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setRows((prevRows) => prevRows.filter((row) => row.id !== id));
+        Swal.fire({
+          title: "¡Eliminado!",
+          text: "La fila fue eliminada",
+          icon: "success"
+        });
+      }
+    });
   };
 
   const handleCancelClick = () => {
@@ -181,8 +218,6 @@ export default function TablaValores() {
         />
       ),
     },
-    { field: 'facturacionTotal', headerName: 'Facturacion Total (con impuestos)', width: 310, editable: true },
-    { field: 'tasaTramitacion', headerName: 'Tasa de tramitacion (descuentos)', width: 350, editable: true },
     {
       field: 'gananciaDiaria', headerName: 'Ganancia Diaria', width: 180, editable: true,
       renderCell: (params) => (
@@ -198,6 +233,8 @@ export default function TablaValores() {
         />
       ),
     },
+    { field: 'facturacionTotal', headerName: 'Facturacion Total (con impuestos)', width: 310, editable: true },
+    { field: 'tasaTramitacion', headerName: 'Tasa de tramitacion (descuentos)', width: 350, editable: true },
     {
       field: 'actions',
       headerName: 'Actions',
