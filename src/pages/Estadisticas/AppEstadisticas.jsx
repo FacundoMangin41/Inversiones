@@ -8,16 +8,16 @@ export default function AppEstadisticas() {
   return (
     <div className='PagesEstadisticas'>
       <div className='pagesTarjetasEstadisticas'>
-      <SumaGananciasDiarias /> {/*Mostramos el componente SumaGananciasDiarias*/}
-      <SumaGananciasUltimaSemana /> {/*Mostramos el componente SumaGananciasDiarias*/}
-      <SumaGananciasDiarias /> {/*Mostramos el componente SumaGananciasDiarias*/}
+      <SumaGananciasDiarias /> 
+      <SumaGananciasUltimaSemana /> 
+      {/* <SumaGananciasDiarias />  */}
       </div>
 
-      <div className='pagesTarjetasEstadisticas'>
-      <SumaGananciasDiarias /> {/*Mostramos el componente SumaGananciasDiarias*/}
-      <SumaGananciasDiarias /> {/*Mostramos el componente SumaGananciasDiarias*/}
-      <SumaGananciasDiarias /> {/*Mostramos el componente SumaGananciasDiarias*/}
-      </div>
+      {/* <div className='pagesTarjetasEstadisticas'>
+      <SumaGananciasDiarias /> 
+      <SumaGananciasDiarias /> 
+      <SumaGananciasDiarias /> 
+      </div> */}
     </div>
   );
 }

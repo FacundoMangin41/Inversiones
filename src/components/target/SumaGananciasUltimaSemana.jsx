@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./css/tarjetas.css";
-import SavingsIcon from '@mui/icons-material/Savings';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { startOfWeek, endOfWeek, isSameWeek, max } from 'date-fns';
 
 export default function SumaGananciasUltimaSemana() {
@@ -54,7 +54,7 @@ export default function SumaGananciasUltimaSemana() {
 
   return (
     <div className='containerTarjetas'>
-      <SavingsIcon className='iconoTarjeta'/>
+      <CalendarMonthIcon className='iconoTarjeta'/>
       <div className="contenedorTarjetasInformacion">
         <h1>{calcularSumaGananciasUltimaSemana()}<span> USDT</span></h1>
         <h3>Ganancias de la última semana</h3>
