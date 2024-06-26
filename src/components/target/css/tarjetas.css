@@ -51,9 +51,9 @@
 }
 
 
-@media (max-width: 1670px){
+@media (max-width: 1680px){
     .containerTarjetas{
-        width: 22rem;
+        width: 28rem;
         height: 9rem;
     }
 
@@ -70,6 +70,24 @@
     }
 }
 
+@media (max-width: 1440px){
+  .containerTarjetas{
+      width: 22rem;
+      height: 9rem;
+  }
+
+  .contenedorTarjetasInformacion h1{
+    font-size: 2rem;
+  }
+
+  .contenedorTarjetasInformacion h1 span{
+    font-size: 1.5rem;
+  }
+
+  .contenedorTarjetasInformacion h3{
+      font-size: 1.3rem;
+  }
+}
 
 @media (max-width: 1024px){
     .containerTarjetas{
@@ -141,7 +159,7 @@
     }
 
     .contenedorTarjetasInformacion h1 span{
-      font-size: 1.3rem;
+      font-size: 1.3rem; 
     }
 
     .contenedorTarjetasInformacion h3{

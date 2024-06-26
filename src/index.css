@@ -83,6 +83,7 @@ body {
   background-repeat: no-repeat;
 }
 
+
 /* Estilos para WebKit (Safari, Chrome, Opera) */
 ::-webkit-scrollbar {
   width: 12px; /* Ancho de la barra de desplazamiento */
@@ -103,5 +104,9 @@ body {
 @media (max-width: 1200px) {
   ::-webkit-scrollbar {
     width: 4px; /* Ancho de la barra de desplazamiento */
+  }
+
+  body {
+    background: #081220 ;
   }
 }

@@ -79,7 +79,7 @@ export default function FormularioTabla({ onAdd }) {
     <div style={{ position: 'relative' }}>
       <form onSubmit={handleFormSubmit} style={{ marginBottom: 20 }} className='formularioTabla'>
         <div className="recuadroFormulario">
-          <h1>Formulario</h1>
+          <h1>Registrar Inversion</h1>
           <TextField
             label="Fecha"
             name="fecha"

@@ -25,7 +25,7 @@ export default function SumaGananciasDiarias() {
       <SavingsIcon className='iconoTarjeta'/>
       <div className="contenedorTarjetasInformacion">
         <h1>{calcularSumaGanancias()}<span> USDT</span></h1>
-        <h3>Ganancias totales</h3>
+        <h3>Ganancias Acumuladas</h3>
       </div>
     </div>
   );
