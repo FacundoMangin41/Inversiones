@@ -35,7 +35,7 @@ export default function ButtonAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" style={{ top: isNavVisible ? 0 : -64, transition: 'top 0.6s' }}>
+      <AppBar position="fixed" >
         <div className="sideBar">
           <div className="botonHamburguesaCelular">
             <div className="botonHamburguesaSidebar">

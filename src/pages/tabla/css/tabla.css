@@ -5,4 +5,12 @@
 
 .tablaInversiones{
     width: 94%;
+
+}
+
+@media (max-height: 700px){
+
+    .tablaInversiones{
+        padding-bottom: 3rem;
+    }
 }

@@ -244,7 +244,7 @@ export default function TablaValores() {
   ];
 
   return (
-    <Box sx={{ height: '76vh', width: '100%' }}>
+    <Box sx={{ height: 'clamp(10rem, 76rem, 78vh)', marginBottom: '2rem', width: '100%' }}>
       <Button className='botonTabla'
         variant="contained"
         color="primary"
@@ -280,7 +280,7 @@ export default function TablaValores() {
           Eliminar Lista
         </Button>
       </label>
-      <DataGrid
+      <DataGrid 
         rows={rows}
         columns={columns}
         pageSize={5}
