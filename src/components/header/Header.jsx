@@ -5,6 +5,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Link, useLocation } from 'react-router-dom';
 import "./css/header.css";
+import BotonHamburguesa from "../header/BotonHamburguesa";
+import logo from "../../assets/logo.png";
 
 import Button from '@mui/material/Button';
 
@@ -39,22 +41,23 @@ export default function ButtonAppBar() {
         <div className="sideBar">
           <div className="botonHamburguesaCelular">
             <div className="botonHamburguesaSidebar">
-              {/* <BotonHamburguesa /> */}
+              <BotonHamburguesa />
             </div>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: '600' }}>
-              PORTAFOLIO
+              Control de inversiones
             </Typography>
           </div>
 
           <div className="sidebarPc">
             <nav className="buscadoresSidebarPc" data-navbar>
 
+              
               <div className={`portafolioSidebarPc ${location.pathname === '/' ? 'active' : ''}`}>
-                <Link to="/" className="buscadoresSidebarPc-link">PORTAFOLIO</Link>
+                <Link to="/" className="buscadoresSidebarPc-link"><img src={logo} alt="" />Control de inversiones</Link>
               </div>
 
               <div className={`buscadoresSidebarPc-link ${location.pathname === '/' ? 'active' : ''}`}>
-                <Link to="/" className="buscadoresSidebarPc-link">Informacion</Link>
+                <Link to="/" className="buscadoresSidebarPc-link">Inversiones</Link>
               </div>
 
               <div className={`buscadoresSidebarPc-link ${location.pathname === '/formulario' ? 'active' : ''}`}>

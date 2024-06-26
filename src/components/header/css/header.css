@@ -31,7 +31,7 @@ min-width: 30px !important;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1.5rem 0 0 ;
+    margin: 1.5rem 0 ;
     text-align: center;
     flex-direction: column;
     font-size: 1rem;
@@ -48,16 +48,16 @@ min-width: 30px !important;
 }
 
 .imagenPerfil img{
-    width: clamp(1rem , 11rem, 90vw);
+    width: clamp(1rem , 9rem, 90vw);
     border-radius: 50%;
     border: 2px solid var(--letrasSidebar);
+    background-color: #11798634;
 }
     
 .drawerItem{
     width: 100%;  /* Toma el valor de todo el sidebar  */
     color: transparent;
 }
-
 
 
 
@@ -72,6 +72,7 @@ min-width: 30px !important;
         justify-content: center;
         align-items: center;
         gap: 1rem;
+        padding-left: 1rem;
     }
 
 }
@@ -84,43 +85,16 @@ min-width: 30px !important;
     background-color: var(--divider);
 }
 
-.botonDescargarPdfSidebar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.botonDescargarPdfSidebar p{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 0.5rem;
-    color: var(--letrasSidebar);
-    padding: 0.6rem;
-    margin: 0.3rem 0 1rem;
-    background-color: var(--hoverBotonPortada);
-    border-radius: 7px;
-    cursor: pointer;
-    border: 1px solid var(--letrasSidebar);
-    transition: var(--transition);
-}
-
-.botonDescargarPdfSidebar p:hover{
-    background-color: var(--botonPortada);
-}
-
-
 /* 
 ----------------------------------------------------
 ----------------Color Sidebar Abierta
 ---------------------------------------------------- */
 .css-wf16b5{
-    background-color: var(--BarraNavegacion) !important;
+    background-color: var(--sidebar) !important;
 }
 
 .css-4t3x6l-MuiPaper-root-MuiDrawer-paper{
-    background-color: var(--BarraNavegacion) !important;
+    background-color: var(--sidebar) !important;
 }
 
 .drawerItem:hover{
@@ -169,8 +143,15 @@ min-width: 30px !important;
     margin: 0 10px; /* Espaciado entre los enlaces */
     color: inherit; /* Hereda el color del elemento padre */
     transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
   }
 
+  .buscadoresSidebarPc-link img{
+    width: 4rem;
+  }
 
   .buscadoresSidebarPc-link.active {
     background-color: #407c7c; /* Color de fondo cuando está activo */
@@ -178,3 +159,29 @@ min-width: 30px !important;
     border-radius: 3px;
     padding: 0.36rem;
   }
+
+
+  .pie-de-pagina {
+    position: static;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.pie-de-pagina p{
+    margin: 0px;
+    padding: 4px 20px;
+    background-color: var(--sidebar);
+    color: var(--letrasSidebar);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+
+.pie-de-pagina p span{
+    font-weight: bold;
+    padding-right: 4px;
+}

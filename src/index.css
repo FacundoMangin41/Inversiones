@@ -31,6 +31,7 @@
   --botonLetras: #fff;
   --botonGithub: ;
   --BarraNavegacion: #192139;
+  --sidebar: #192139;
   --hoverBarraNavegacion: #242d4d;
   --SombrasBarraNavegacion: transparent;
   --recuadroContenedores: #dfdfdf;
@@ -68,7 +69,8 @@ p{
 body {
   margin: 0;
   min-height: 100dvh;
-  background-color: var(--fondo);
+  /* background-color: var(--fondo); */
+  background:  linear-gradient(to right, rgba(1, 5, 48, 0.788), rgb(0, 0, 14)), url(/src/assets/fondoCripto.jpg);
   /* Color de toda la pagina */
   /* background: radial-gradient(79.43% 251.58% at 23.18% 73.07%, #0142a0 0, #0a0b1f 44.41%, #0c0b24 56.46%, #080518 69.58%, #070416 100%, #020113 0); */
   /* background: radial-gradient(79.43% 251.58% at 23.18% 73.07%, #010027 0, #050231 100%, #060322 69.58%, #101034 56.46%, #0f133a 44.41%, #0142a0 0); */
