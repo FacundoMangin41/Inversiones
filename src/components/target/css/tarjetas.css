@@ -47,7 +47,7 @@
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    width: 12rem;
+    width: 14rem;
 }
 
 
@@ -93,6 +93,7 @@
 
     .contenedorTarjetasInformacion h3{
         font-size: 1rem;
+        width: 10rem;
     }
 }
 
@@ -119,6 +120,7 @@
 
     .contenedorTarjetasInformacion h3{
         font-size: 0.8rem;
+        width: 7.5rem;
     }
 }
 
@@ -144,5 +146,6 @@
 
     .contenedorTarjetasInformacion h3{
         font-size: 1.15rem;
+        width: 12rem;
     }
 }
