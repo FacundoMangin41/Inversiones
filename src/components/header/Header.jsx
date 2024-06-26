@@ -36,7 +36,7 @@ export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" style={{ top: isNavVisible ? 0 : -64, transition: 'top 0.6s' }}>
-        <Toolbar className="sideBar">
+        <div className="sideBar">
           <div className="botonHamburguesaCelular">
             <div className="botonHamburguesaSidebar">
               {/* <BotonHamburguesa /> */}
@@ -53,31 +53,23 @@ export default function ButtonAppBar() {
                 <Link to="/" className="buscadoresSidebarPc-link">PORTAFOLIO</Link>
               </div>
 
+              <div className={`buscadoresSidebarPc-link ${location.pathname === '/' ? 'active' : ''}`}>
+                <Link to="/" className="buscadoresSidebarPc-link">Informacion</Link>
+              </div>
+
               <div className={`buscadoresSidebarPc-link ${location.pathname === '/formulario' ? 'active' : ''}`}>
                 <Link to="/formulario" className="buscadoresSidebarPc-link">Formulario</Link>
               </div>
 
-              <div className={`buscadoresSidebarPc-link ${location.pathname === '/habilidades' ? 'active' : ''}`}>
-                <Link to="/habilidades" className="buscadoresSidebarPc-link">Habilidades</Link>
-              </div>
-
-              <div className={`buscadoresSidebarPc-link ${location.pathname === '/proyectos' ? 'active' : ''}`}>
-                <Link to="/proyectos" className="buscadoresSidebarPc-link">Proyectos</Link>
-              </div>
-
-              <div className={`buscadoresSidebarPc-link ${location.pathname === '/experiencia-laboral' ? 'active' : ''}`}>
-                <Link to="/experiencia-laboral" className="buscadoresSidebarPc-link">Exp Laboral</Link>
-              </div>
-
-              <div className={`buscadoresSidebarPc-link ${location.pathname === '/cursos' ? 'active' : ''}`}>
-                <Link to="/cursos" className="buscadoresSidebarPc-link">Certificaciones</Link>
+              <div className={`buscadoresSidebarPc-link ${location.pathname === '/estadisticas' ? 'active' : ''}`}>
+                <Link to="/estadisticas" className="buscadoresSidebarPc-link">Estadisticas</Link>
               </div>
 
               {/* <BotonRedesSociales/> */}
 
             </nav>
           </div>
-        </Toolbar>
+        </div>
       </AppBar>
       <div style={{ paddingTop: '120px' }}></div>
     </Box>

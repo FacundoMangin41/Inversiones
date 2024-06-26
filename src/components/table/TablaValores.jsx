@@ -120,8 +120,8 @@ export default function TablaValores() {
 
   const handleAddRow = (newRow) => {
     const id = `added-${Date.now()}`;
-    const gananciaDiaria = parseFloat(newRow.final) - parseFloat(newRow.invertido);
-    const tasaTramitacion = parseFloat(newRow.facturacionTotal) - parseFloat(newRow.final);
+    const gananciaDiaria = parseFloat(newRow.final).toFixed(8) - parseFloat(newRow.invertido).toFixed(8);
+    const tasaTramitacion = parseFloat(newRow.facturacionTotal).toFixed(8) - parseFloat(newRow.final).toFixed(8);
 
     const rowToAdd = {
       id,
@@ -154,7 +154,7 @@ export default function TablaValores() {
                 <GridActionsCellItem
                   icon={<SaveIcon />}
                   label="Save"
-                  onClick={() => handleProcessRowUpdate(params.row)}
+                  onClick={() => handleAddRow(params.row)}
                   color="primary"
                 />
                 <GridActionsCellItem
