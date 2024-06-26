@@ -74,7 +74,6 @@ export default function ButtonAppBar() {
           </div>
         </div>
       </div>
-      <div style={{ paddingTop: '75px' }}></div>
     </Box>
   );
 }
