@@ -3,3 +3,12 @@
         font-size: 0.63rem !important;
     }
 }
+
+@media (max-width: 495px){
+    .botonesInvercionescontenedor{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+}

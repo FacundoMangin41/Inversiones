@@ -244,43 +244,46 @@ export default function TablaValores() {
   ];
 
   return (
-    <Box sx={{ height: 'clamp(10rem, 76rem, 78vh)', marginBottom: '2rem', width: '100%' }}>
-      <Button className='botonTabla'
-        variant="contained"
-        color="primary"
-        onClick={handleExport}
-        style={{ marginBottom: 10 }}
-      >
-        Exportar Excel
-      </Button>
-      <input
-        type="file"
-        accept=".xlsx, .xls"
-        onChange={handleImport}
-        style={{ display: 'none' }}
-        id="import-file"
-      />
-      <label htmlFor="import-file">
+    <Box sx={{ height: 'clamp(10rem, 76rem, 78vh)', marginBottom: '2rem', width: '100%' }} className='botonesInvercionesCantainer'>
+      <div className="botonesInvercionescontenedor">
         <Button className='botonTabla'
           variant="contained"
-          component="span"
-          color="secondary"
-          style={{ marginBottom: 10, marginLeft: 10 }}
+          color="primary"
+          onClick={handleExport}
+          style={{ marginBottom: 10 }}
         >
-          Importar Excel
+          Exportar Excel
         </Button>
-      </label>
-      <label htmlFor="import-file">
-        <Button className='botonTabla'
-          variant="contained"
-          color="secondary"
-          onClick={handleDeleteAllRows}
-          style={{ marginBottom: 10, marginLeft: 10, backgroundColor: '#FF0000', color: '#FFFFFF', }}
-        >
-          Eliminar Lista
-        </Button>
-      </label>
-      <DataGrid 
+        <input
+          type="file"
+          accept=".xlsx, .xls"
+          onChange={handleImport}
+          style={{ display: 'none' }}
+          id="import-file"
+        />
+        <label htmlFor="import-file">
+          <Button className='botonTabla'
+            variant="contained"
+            component="span"
+            color="secondary"
+            style={{ marginBottom: 10, marginLeft: 10 }}
+          >
+            Importar Excel
+          </Button>
+        </label>
+        <label htmlFor="import-file">
+          <Button className='botonTabla'
+            variant="contained"
+            color="secondary"
+            onClick={handleDeleteAllRows}
+            style={{ marginBottom: 10, marginLeft: 10, backgroundColor: '#FF0000', color: '#FFFFFF', }}
+          >
+            Eliminar Lista
+          </Button>
+        </label>
+      </div>
+
+      <DataGrid
         rows={rows}
         columns={columns}
         pageSize={5}
