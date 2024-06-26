@@ -50,6 +50,12 @@
     width: 14rem;
 }
 
+.containerTarjetasTramitacion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 @media (max-width: 1680px){
     .containerTarjetas{

@@ -2,6 +2,7 @@ import * as React from 'react';
 import SumaGananciasDiarias from '../../components/target/SumaGananciasDiarias';
 import SumaGananciasUltimaSemana from '../../components/target/SumaGananciasUltimaSemana';
 import SumaGananciasUltimoMes from '../../components/target/SumaGananciasUltimoMes';
+import SumaTasaTramitacion from '../../components/target/SumaTasaTramitacion';
 import "./css/estadistica.css"
 
 export default function AppEstadisticas() {
@@ -15,11 +16,11 @@ export default function AppEstadisticas() {
         {/* <SumaGananciasDiarias />  */}
       </div>
 
-      {/* <div className='pagesTarjetasEstadisticas'>
-      <SumaGananciasDiarias /> 
-      <SumaGananciasDiarias /> 
-      <SumaGananciasDiarias /> 
-      </div> */}
+      <div className='pagesTarjetasEstadisticas'>
+      <SumaTasaTramitacion /> 
+      {/* <SumaGananciasDiarias /> 
+      <SumaGananciasDiarias />  */}
+      </div>
     </div>
   );
 }
