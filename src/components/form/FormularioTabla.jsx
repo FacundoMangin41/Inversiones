@@ -1,6 +1,7 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Autocomplete from '@mui/material/Autocomplete';
 import "./css/formularioTabla.css"
 import SaveIcon from '@mui/icons-material/Save';
 
@@ -9,6 +10,10 @@ const inputStyle = {
   marginRight: 2,
   borderRadius: 1, // Radio de borde
 };
+
+const monedas = ['BTC', 'ETH', 'TRX', 'SOL', 'SHX', 'BNB', 'ACRIS', 'BY', 'AVAX', 'XBH', 'FIL', 
+  'BTAR', 'DOT', 'UNIT', 'RADF  ETC', 'SOX', 'ADA', 'FAU', 'XLM', 'CMR', 'DOGE', 'ZXQ', 'UNIBOT', 
+  'MRF', 'MATIC', 'ENGR', 'DTQ', 'LTC', 'SHIB'];
 
 export default function FormularioTabla({ onAdd }) {
   
@@ -25,6 +30,13 @@ export default function FormularioTabla({ onAdd }) {
     setFormData({
       ...formData,
       [name]: value,
+    });
+  };
+
+  const handleAutocompleteChange = (event, newValue) => {
+    setFormData({
+      ...formData,
+      moneda: newValue,
     });
   };
 
@@ -62,14 +74,27 @@ export default function FormularioTabla({ onAdd }) {
         required
         sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 98vw)', margin: 0}} // Ancho específico para fecha
       />
-      <TextField
-        label="Moneda"
-        name="moneda"
+      <Autocomplete
+        freeSolo
+        options={monedas}
         value={formData.moneda}
-        onChange={handleInputChange}
-        variant="outlined"
-        required
-        sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 98vw)', margin: 0}} // Ancho específico para moneda
+        onChange={handleAutocompleteChange}
+        onInputChange={(event, newInputValue) => {
+          setFormData({
+            ...formData,
+            moneda: newInputValue,
+          });
+        }}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label="Moneda"
+            name="moneda"
+            variant="outlined"
+            required
+            sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 98vw)', margin: 0}} // Ancho específico para moneda
+          />
+        )}
       />
       <TextField
         label="USDT Invertido"
