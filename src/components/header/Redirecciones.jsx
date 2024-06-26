@@ -11,8 +11,8 @@ import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 
 export const iconMap = {
-  Formulario: <CreateIcon />,
-  'Inversiones': <MonetizationOnIcon />,
+  'Registrar Inversión': <CreateIcon />,
+  Inversiones: <MonetizationOnIcon />,
   // WhatsApp: <WhatsAppIcon />,
   Linkedin: <LinkedInIcon />,
   Instagram: <InstagramIcon />,
@@ -23,7 +23,7 @@ export const iconMap = {
 
 export const drawerItems = [
   { label: 'Inversiones', path: '/', className: 'drawerItem' },
-  { label: 'Formulario', path: '/formulario', className: 'drawerItem' },
+  { label: 'Registrar Inversión', path: '/formulario', className: 'drawerItem' },
   { label: 'Estadisticas', path: '/Estadisticas', className: 'drawerItem' },
 ];
 

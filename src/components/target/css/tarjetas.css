@@ -1,0 +1,147 @@
+.containerTarjetas{
+    width: 32rem;
+    height: 11rem;
+    background-color: #303030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 15px;
+    border: 2px solid #e38445;
+    padding: 1rem;
+}
+
+.iconoTarjeta{
+    font-size: 3.5rem !important;
+    padding: 0.8rem;
+    border-radius: 50%;
+    background-color: #e38445;
+}
+
+.contenedorTarjetasInformacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.contenedorTarjetasInformacion h1{
+    margin: 0;
+    color: #e38445;
+    font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.contenedorTarjetasInformacion h1 span{
+    margin: 0;
+    color: #e38445;
+    font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.3rem;
+}
+
+.contenedorTarjetasInformacion h3{
+    margin: 0;
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+
+@media (max-width: 1670px){
+    .containerTarjetas{
+        width: 22rem;
+        height: 9rem;
+    }
+
+    .contenedorTarjetasInformacion h1{
+      font-size: 2rem;
+    }
+
+    .contenedorTarjetasInformacion h1 span{
+      font-size: 1.5rem;
+    }
+
+    .contenedorTarjetasInformacion h3{
+        font-size: 1.3rem;
+    }
+}
+
+
+@media (max-width: 1024px){
+    .containerTarjetas{
+        width: 16rem;
+        height: 7rem;
+        gap: 1rem;
+    }
+
+    .iconoTarjeta{
+        font-size: 2.5rem !important;
+        padding: 0.8rem;
+    }
+
+    .contenedorTarjetasInformacion h1{
+      font-size: 1.7rem;
+    }
+
+    .contenedorTarjetasInformacion h1 span{
+      font-size: 1.3rem;
+    }
+
+    .contenedorTarjetasInformacion h3{
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 768px){
+    .containerTarjetas{
+        width: 11rem;
+        height: 6rem;
+        gap: 1rem;
+    }
+
+    .iconoTarjeta{
+        font-size: 2rem !important;
+        padding: 0.7rem;
+    }
+
+    .contenedorTarjetasInformacion h1{
+      font-size: 1.5rem;
+    }
+
+    .contenedorTarjetasInformacion h1 span{
+      font-size: 1rem;
+    }
+
+    .contenedorTarjetasInformacion h3{
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 500px){
+    .containerTarjetas{
+        width: 75vw;
+        height: 6rem;
+        gap: 1rem;
+    }
+
+    .iconoTarjeta{
+        font-size: 2.5rem !important;
+        padding: 0.7rem;
+    }
+
+    .contenedorTarjetasInformacion h1{
+      font-size: 2rem;
+    }
+
+    .contenedorTarjetasInformacion h1 span{
+      font-size: 1.3rem;
+    }
+
+    .contenedorTarjetasInformacion h3{
+        font-size: 1.15rem;
+    }
+}

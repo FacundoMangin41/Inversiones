@@ -61,7 +61,7 @@ export default function ButtonAppBar() {
               </div>
 
               <div className={`buscadoresSidebarPc-link ${location.pathname === '/formulario' ? 'active' : ''}`}>
-                <Link to="/formulario" className="buscadoresSidebarPc-link">Formulario</Link>
+                <Link to="/formulario" className="buscadoresSidebarPc-link">Registrar Inversión</Link>
               </div>
 
               <div className={`buscadoresSidebarPc-link ${location.pathname === '/estadisticas' ? 'active' : ''}`}>

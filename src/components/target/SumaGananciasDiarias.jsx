@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import "./css/tarjetas.css";
+import SavingsIcon from '@mui/icons-material/Savings';
 
-export default function SumaGananciasDiarias({ rows }) {
+export default function SumaGananciasDiarias() {
+  const [rows, setRows] = useState([]);
+
+  useEffect(() => {
+    const savedRows = localStorage.getItem('rows');
+    if (savedRows) {
+      setRows(JSON.parse(savedRows));
+    }
+  }, []);
+
   const calcularSumaGanancias = () => {
     let suma = 0;
     rows.forEach((row) => {
@@ -10,9 +21,12 @@ export default function SumaGananciasDiarias({ rows }) {
   };
 
   return (
-    <div style={{ marginTop: 20 }}>
-      <h3>Suma de Ganancias Diarias:</h3>
-      <p>{calcularSumaGanancias()}</p>
+    <div className='containerTarjetas'>
+      <SavingsIcon className='iconoTarjeta'/>
+      <div className="contenedorTarjetasInformacion">
+        <h1>{calcularSumaGanancias()}<span> USDT</span></h1>
+        <h3>Ganancias totales</h3>
+      </div>
     </div>
   );
 }

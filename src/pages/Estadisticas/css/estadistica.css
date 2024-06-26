@@ -1,0 +1,27 @@
+.PagesEstadisticas{
+    display: flex;
+    justify-content: center;
+    padding-top: 38px;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.pagesTarjetasEstadisticas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media (max-width: 500px){
+    .PagesEstadisticas{
+        padding-bottom: 38px;
+        align-items: center;
+    }
+
+    .pagesTarjetasEstadisticas{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
