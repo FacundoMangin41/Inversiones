@@ -43,6 +43,14 @@
 
   --transition: all 0.25s ease-out;
   --transition5s: all 0.25s ease-out;
+
+
+  /* -----------------chips------------ */
+  --usdtFinal: #cbe7ab;
+  --usdtInvertido: #ffdc69;
+  --gananciaDiaria: #ecd5f0;
+  --botonFormulario: #9c27b0;
+
 }
 
 h1{

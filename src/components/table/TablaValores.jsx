@@ -7,6 +7,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Close';
+import { Chip } from '@mui/material';
 
 export default function TablaValores() {
   const [rows, setRows] = useState(() => {
@@ -118,29 +119,76 @@ export default function TablaValores() {
     setEditRowId(null);
   };
 
-  const handleAddRow = (newRow) => {
-    const id = `added-${Date.now()}`;
-    const gananciaDiaria = parseFloat(newRow.final).toFixed(8) - parseFloat(newRow.invertido).toFixed(8);
-    const tasaTramitacion = parseFloat(newRow.facturacionTotal).toFixed(8) - parseFloat(newRow.final).toFixed(8);
+  // const handleAddRow = (newRow) => {
+  //   const id = `added-${Date.now()}`;
+  //   const gananciaDiaria = parseFloat(newRow.final).toFixed(8) - parseFloat(newRow.invertido).toFixed(8);
+  //   const tasaTramitacion = parseFloat(newRow.facturacionTotal).toFixed(8) - parseFloat(newRow.final).toFixed(8);
 
-    const rowToAdd = {
-      id,
-      ...newRow,
-      gananciaDiaria: gananciaDiaria.toFixed(8),
-      tasaTramitacion: tasaTramitacion.toFixed(8),
-    };
+  //   const rowToAdd = {
+  //     id,
+  //     ...newRow,
+  //     gananciaDiaria: gananciaDiaria.toFixed(8),
+  //     tasaTramitacion: tasaTramitacion.toFixed(8),
+  //   };
 
-    setRows((prevRows) => [...prevRows, rowToAdd]);
+  //   setRows((prevRows) => [...prevRows, rowToAdd]);
+  // };
+  const handleAddRow = (updatedRow) => {
+    setRows((prevRows) =>
+      prevRows.map((row) =>
+        row.id === updatedRow.id ? { ...row, ...updatedRow } : row
+      )
+    );
   };
 
+
   const columns = [
-    { field: 'fecha', headerName: 'Fecha', width: 150, editable: true },
+    { field: 'fecha', headerName: 'Fecha', width: 150, editable: true,      },
     { field: 'moneda', headerName: 'Moneda', width: 130, editable: true },
-    { field: 'invertido', headerName: 'USDT Invertido', width: 230, editable: true },
-    { field: 'final', headerName: 'USDT Final', width: 280, editable: true },
+    { field: 'invertido', headerName: 'USDT Invertido', width: 230, editable: true,
+      renderCell: (params) => (
+        <Chip
+          label={params.value}
+          variant="outlined"
+          // color={params.value === 'Realizado' ? 'success' : 'warning'}
+          sx={{
+            backgroundColor: 'var(--usdtInvertido)',
+            fontWeight: 'bold',
+            width: '100%',
+          }}
+        />
+      ),
+     },
+    { field: 'final', headerName: 'USDT Final', width: 230, editable: true,
+      renderCell: (params) => (
+        <Chip
+          label={params.value}
+          variant="outlined"
+          // color={params.value === 'Realizado' ? 'success' : 'warning'}
+          sx={{
+            backgroundColor: 'var(--usdtFinal)',
+            fontWeight: 'bold',
+            width: '100%',
+          }}
+        />
+      ),
+     },
     { field: 'facturacionTotal', headerName: 'Facturacion Total (con impuestos)', width: 310, editable: true },
     { field: 'tasaTramitacion', headerName: 'Tasa de tramitacion (descuentos)', width: 350, editable: true },
-    { field: 'gananciaDiaria', headerName: 'Ganancia Diaria', width: 180, editable: true },
+    { field: 'gananciaDiaria', headerName: 'Ganancia Diaria', width: 180, editable: true,
+      renderCell: (params) => (
+        <Chip
+          label={params.value}
+          variant="outlined"
+          // color={params.value === 'Realizado' ? 'success' : 'warning'}
+          sx={{
+            backgroundColor: 'var(--gananciaDiaria)',
+            fontWeight: 'bold',
+            width: '100%',
+          }}
+        />
+      ),
+     },
     {
       field: 'actions',
       headerName: 'Actions',

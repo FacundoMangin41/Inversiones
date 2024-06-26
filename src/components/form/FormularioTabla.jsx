@@ -1,6 +1,8 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import "./css/formularioTabla.css"
+import SaveIcon from '@mui/icons-material/Save';
 
 const inputStyle = {
   backgroundColor: 'var(--fondoContenedoresFormulario)',
@@ -9,6 +11,7 @@ const inputStyle = {
 };
 
 export default function FormularioTabla({ onAdd }) {
+  
   const [formData, setFormData] = React.useState({
     fecha: '',
     moneda: '',
@@ -49,7 +52,7 @@ export default function FormularioTabla({ onAdd }) {
   };
 
   return (
-    <form onSubmit={handleFormSubmit} style={{ marginBottom: 20 }}>
+    <form onSubmit={handleFormSubmit} style={{ marginBottom: 20 }} className='formularioTabla'>
       <TextField
         label="Fecha"
         name="fecha"
@@ -57,7 +60,7 @@ export default function FormularioTabla({ onAdd }) {
         onChange={handleInputChange}
         variant="outlined"
         required
-        sx={{ ...inputStyle, width: '10rem' }} // Ancho específico para fecha
+        sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 98vw)', margin: 0}} // Ancho específico para fecha
       />
       <TextField
         label="Moneda"
@@ -66,7 +69,7 @@ export default function FormularioTabla({ onAdd }) {
         onChange={handleInputChange}
         variant="outlined"
         required
-        sx={{ ...inputStyle, width: '10rem' }} // Ancho específico para moneda
+        sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 98vw)', margin: 0}} // Ancho específico para moneda
       />
       <TextField
         label="USDT Invertido"
@@ -75,7 +78,7 @@ export default function FormularioTabla({ onAdd }) {
         onChange={handleInputChange}
         variant="outlined"
         required
-        sx={{ ...inputStyle, width: '250px' }} // Ancho específico para USDT Invertido
+        sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 98vw)', margin: 0}} // Ancho específico para USDT Invertido
       />
       <TextField
         label="USDT Final (con impuestos)"
@@ -84,7 +87,7 @@ export default function FormularioTabla({ onAdd }) {
         onChange={handleInputChange}
         variant="outlined"
         required
-        sx={{ ...inputStyle, width: '300px' }} // Ancho específico para USDT Final
+        sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 98vw)', margin: 0}} // Ancho específico para USDT Final
       />
       <TextField
         label="Facturacion Total (con impuestos)"
@@ -93,10 +96,10 @@ export default function FormularioTabla({ onAdd }) {
         onChange={handleInputChange}
         variant="outlined"
         required
-        sx={{ ...inputStyle, width: '350px' }} // Ancho específico para Facturacion Total
+        sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 98vw)', margin: 0 }} // Ancho específico para Facturacion Total
       />
-      <Button type="submit" variant="contained" color="primary">
-        Add
+      <Button type="submit" variant="contained" color="secondary" className='botonFormulario'>
+        <SaveIcon />Guardar
       </Button>
     </form>
   );
