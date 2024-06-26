@@ -103,8 +103,7 @@ body {
   }
 
   body {
-    background-attachment: local;
-
+    background-attachment: local !important;
   }
 
 }
