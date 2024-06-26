@@ -37,7 +37,7 @@ export default function ButtonAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" >
+      <div position="fixed" >
         <div className="sideBar">
           <div className="botonHamburguesaCelular">
             <div className="botonHamburguesaSidebar">
@@ -73,7 +73,7 @@ export default function ButtonAppBar() {
             </nav>
           </div>
         </div>
-      </AppBar>
+      </div>
       <div style={{ paddingTop: '75px' }}></div>
     </Box>
   );
