@@ -101,7 +101,7 @@ export default function TablaValores() {
 
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, "Data");
-    XLSX.writeFile(workbook, "data.xlsx");
+    XLSX.writeFile(workbook, "Control de inversiones.xlsx");
   };
 
   const handleImport = (event) => {
