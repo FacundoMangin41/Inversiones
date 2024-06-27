@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./css/tarjetas.css";
+import "../css/tarjetas.css";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { startOfWeek, endOfWeek, isSameWeek, max } from 'date-fns';
 import Card from '@mui/material/Card';
@@ -56,10 +56,10 @@ export default function SumaGananciasUltimaSemana() {
   };
 
   return (
-<Card className='Tarjetas'>
-<div className='contenedorTarjeta'>
+<Card className='Tarjetas tarjetaGanancias'>
+<div className='contenedorTarjeta tarjetaGanancias'>
   <CalendarMonthIcon className='iconoTarjeta'/>
-  <div className="contenedorTextoTarjeta">
+  <div className="contenedorTextoTarjeta tarjetaGanancias">
     <div className='calculoTarjetas'>
       <h1>{calcularSumaGananciasUltimaSemana()}<span> usdt</span></h1>
     </div>

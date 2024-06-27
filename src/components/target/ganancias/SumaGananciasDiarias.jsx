@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import "./css/tarjetas.css";
+import "../css/tarjetas.css";
 import SavingsIcon from '@mui/icons-material/Savings';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
-export default function SumaTasaTramitacion() {
+export default function SumaGananciasDiarias() {
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
@@ -15,24 +17,26 @@ export default function SumaTasaTramitacion() {
     }
   }, []);
 
-  const calcularSumaTasaTramitacion = () => {
+  const calcularSumaGanancias = () => {
     let suma = 0;
     rows.forEach((row) => {
-      suma += parseFloat(row.tasaTramitacion || 0);
+      suma += parseFloat(row.gananciaDiaria || 0);
     });
     return suma.toFixed(2);
   };
 
   return (
-    <Card className='Tarjetas'>
-      <div className='contenedorTarjeta'>
-        <SavingsIcon className='iconoTarjeta' />
+
+
+    <Card className='Tarjetas tarjetaGanancias'>
+      <div className='contenedorTarjeta tarjetaGanancias'>
+        <SavingsIcon className='iconoTarjeta'/>
         <div className="contenedorTextoTarjeta">
-          <div className='calculoTarjetas'>
-            <h1>{calcularSumaTasaTramitacion()}<span> usdt</span></h1>
+          <div className='calculoTarjetas tarjetaGanancias'>
+            <h1>{calcularSumaGanancias()}<span> usdt</span></h1>
           </div>
           <CardContent className='textoTarjetas'>
-            Tasa de tramitacion Acumuladas
+            Ganancias Acumuladas
           </CardContent>
         </div>
       </div>

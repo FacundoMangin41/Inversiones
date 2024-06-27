@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import "./css/tarjetas.css";
-import StickyNote2Icon from '@mui/icons-material/StickyNote2';
-import { startOfMonth, endOfMonth, isSameMonth, max } from 'date-fns';
-import { CardActionArea } from '@mui/material';
+import "../css/tarjetas.css";
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import { startOfWeek, endOfWeek, isSameWeek, max } from 'date-fns';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import { CardActionArea } from '@mui/material';
 
-export default function SumaGananciasUltimoMes() {
+export default function SumaTasaTramitacionUltimaSemana() {
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function SumaGananciasUltimoMes() {
     return new Date(year, month - 1, day); // Restamos 1 al mes porque los meses en Date van de 0 a 11
   };
 
-  const calcularSumaGananciasUltimoMes = () => {
+  const calcularSumaTasaTramitacionUltimaSemana = () => {
     if (rows.length === 0) {
       return "0.00";
     }
@@ -34,38 +34,38 @@ export default function SumaGananciasUltimoMes() {
     const fechaMasReciente = max(fechas);
     console.log("Fecha más reciente:", fechaMasReciente);
 
-    // Calcular el inicio y fin del mes más reciente
-    const inicioUltimoMes = startOfMonth(fechaMasReciente);
-    const finUltimoMes = endOfMonth(fechaMasReciente);
+    // Calcular el inicio y fin de la semana más reciente
+    const inicioUltimaSemana = startOfWeek(fechaMasReciente, { weekStartsOn: 1 });
+    const finUltimaSemana = endOfWeek(fechaMasReciente, { weekStartsOn: 1 });
 
-    console.log("Inicio del último mes:", inicioUltimoMes);
-    console.log("Fin del último mes:", finUltimoMes);
+    console.log("Inicio de la última semana:", inicioUltimaSemana);
+    console.log("Fin de la última semana:", finUltimaSemana);
 
-    // Sumar las ganancias del último mes
-    let sumaUltimoMes = 0;
+    // Sumar las tasas de tramitación de la última semana
+    let sumaUltimaSemana = 0;
     rows.forEach((row) => {
       const fecha = parseDate(row.fecha);
       console.log("Fecha de row:", fecha);
-      if (isSameMonth(fecha, fechaMasReciente)) {
-        sumaUltimoMes += parseFloat(row.gananciaDiaria || 0);
-        console.log("Suma parcial:", sumaUltimoMes);
+      if (isSameWeek(fecha, fechaMasReciente, { weekStartsOn: 1 })) {
+        sumaUltimaSemana += parseFloat(row.tasaTramitacion || 0);
+        console.log("Suma parcial:", sumaUltimaSemana);
       }
     });
 
-    return sumaUltimoMes.toFixed(2);
+    return sumaUltimaSemana.toFixed(2);
   };
 
   return (
-
     <Card className='Tarjetas'>
-      <div className='contenedorTarjeta'>
-        <StickyNote2Icon className='iconoTarjeta' />
+      <div className='contenedorTarjeta tarjetaTramitacion'>
+        <CalendarMonthIcon className='iconoTarjeta'/>
         <div className="contenedorTextoTarjeta">
           <div className='calculoTarjetas'>
-            <h1>{calcularSumaGananciasUltimoMes()}<span> usdt</span></h1>
+            <h1>{calcularSumaTasaTramitacionUltimaSemana()}<span> usdt</span></h1>
           </div>
           <CardContent className='textoTarjetas'>
-            Ganancias del último mes
+            Tasa de tramitación <br />
+            de la Última Semana
           </CardContent>
         </div>
       </div>
