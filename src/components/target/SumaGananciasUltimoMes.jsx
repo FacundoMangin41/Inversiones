@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import "./css/tarjetas.css";
 import StickyNote2Icon from '@mui/icons-material/StickyNote2';
 import { startOfMonth, endOfMonth, isSameMonth, max } from 'date-fns';
+import { CardActionArea } from '@mui/material';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 export default function SumaGananciasUltimoMes() {
   const [rows, setRows] = useState([]);
@@ -53,12 +56,19 @@ export default function SumaGananciasUltimoMes() {
   };
 
   return (
-    <div className='containerTarjetas'>
-      <StickyNote2Icon className='iconoTarjeta'/>
-      <div className="contenedorTarjetasInformacion">
-        <h1>{calcularSumaGananciasUltimoMes()}<span> USDT</span></h1>
-        <h3>Ganancias del último mes</h3>
+
+    <Card className='Tarjetas'>
+      <div className='contenedorTarjeta'>
+        <StickyNote2Icon className='iconoTarjeta' />
+        <div className="contenedorTextoTarjeta">
+          <div className='calculoTarjetas'>
+            <h1>{calcularSumaGananciasUltimoMes()}<span> usdt</span></h1>
+          </div>
+          <CardContent className='textoTarjetas'>
+            Ganancias del último mes
+          </CardContent>
+        </div>
       </div>
-    </div>
+    </Card>
   );
 }

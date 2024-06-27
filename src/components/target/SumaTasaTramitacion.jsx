@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import "./css/tarjetas.css";
 import SavingsIcon from '@mui/icons-material/Savings';
+import { CardActionArea } from '@mui/material';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 export default function SumaTasaTramitacion() {
   const [rows, setRows] = useState([]);
@@ -21,12 +24,18 @@ export default function SumaTasaTramitacion() {
   };
 
   return (
-    <div className='containerTarjetas'>
-      <SavingsIcon className='iconoTarjeta'/>
-      <div className="contenedorTarjetasInformacion">
-        <h1>{calcularSumaTasaTramitacion()}<span> USDT</span></h1>
-        <h3>Tasa de tramitacion Acumuladas</h3>
+    <Card className='Tarjetas'>
+      <div className='contenedorTarjeta'>
+        <SavingsIcon className='iconoTarjeta' />
+        <div className="contenedorTextoTarjeta">
+          <div className='calculoTarjetas'>
+            <h1>{calcularSumaTasaTramitacion()}<span> usdt</span></h1>
+          </div>
+          <CardContent className='textoTarjetas'>
+            Tasa de tramitacion Acumuladas
+          </CardContent>
+        </div>
       </div>
-    </div>
+    </Card>
   );
 }
