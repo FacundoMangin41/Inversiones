@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../css/tarjetas.css";
-import SavingsIcon from '@mui/icons-material/Savings';
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import { CardActionArea } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -35,7 +35,7 @@ export default function SumaTasaTramitacionUltimoMes() {
   return (
     <Card className='Tarjetas'>
       <div className='contenedorTarjeta tarjetaTramitacion'>
-        <SavingsIcon className='iconoTarjeta' />
+        <CurrencyExchangeIcon className='iconoTarjeta' />
         <div className="contenedorTextoTarjeta">
           <div className='calculoTarjetas'>
             <h1>{calcularSumaTasaTramitacionUltimoMes()}<span> usdt</span></h1>

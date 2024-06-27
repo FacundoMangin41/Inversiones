@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../css/tarjetas.css";
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 import { startOfWeek, endOfWeek, isSameWeek, max } from 'date-fns';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -52,7 +52,7 @@ export default function PromedioUltimaSemana() {
   return (
     <Card className='Tarjetas'>
       <div className='contenedorTarjeta tarjetaPromedio'>
-        <CalendarMonthIcon className='iconoTarjeta'/>
+        <LeaderboardIcon className='iconoTarjeta'/>
         <div className="contenedorTextoTarjeta">
           <div className='calculoTarjetas tarjetaPromedio'>
             <h1>{calcularPromedioGananciasUltimaSemana()}<span> usdt</span></h1>

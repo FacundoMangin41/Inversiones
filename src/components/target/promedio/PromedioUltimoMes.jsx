@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../css/tarjetas.css";
-import StickyNote2Icon from '@mui/icons-material/StickyNote2';
+import CreditCardOffIcon from '@mui/icons-material/CreditCardOff';
 import { startOfMonth, endOfMonth, isSameMonth, max } from 'date-fns';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -52,7 +52,7 @@ export default function PromedioUltimoMes() {
   return (
     <Card className='Tarjetas'>
       <div className='contenedorTarjeta tarjetaPromedio'>
-        <StickyNote2Icon className='iconoTarjeta' />
+        <CreditCardOffIcon className='iconoTarjeta' />
         <div className="contenedorTextoTarjeta">
           <div className='calculoTarjetas tarjetaPromedio'>
             <h1>{calcularPromedioGananciasUltimoMes()}<span> usdt</span></h1>

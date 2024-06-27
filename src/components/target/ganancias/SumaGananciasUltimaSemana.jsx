@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import "../css/tarjetas.css";
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+
 import { startOfWeek, endOfWeek, isSameWeek, max } from 'date-fns';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from '@mui/material';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 export default function SumaGananciasUltimaSemana() {
   const [rows, setRows] = useState([]);
@@ -58,7 +59,7 @@ export default function SumaGananciasUltimaSemana() {
   return (
 <Card className='Tarjetas tarjetaGanancias'>
 <div className='contenedorTarjeta tarjetaGanancias'>
-  <CalendarMonthIcon className='iconoTarjeta'/>
+  <AttachMoneyIcon className='iconoTarjeta'/>
   <div className="contenedorTextoTarjeta tarjetaGanancias">
     <div className='calculoTarjetas'>
       <h1>{calcularSumaGananciasUltimaSemana()}<span> usdt</span></h1>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../css/tarjetas.css";
-import SavingsIcon from '@mui/icons-material/Savings';
+import AnalyticsIcon from '@mui/icons-material/Analytics';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
@@ -32,7 +32,7 @@ export default function PromedioTotal() {
   return (
     <Card className='Tarjetas'>
       <div className='contenedorTarjeta tarjetaPromedio'>
-        <SavingsIcon className='iconoTarjeta'/>
+        <AnalyticsIcon className='iconoTarjeta'/>
         <div className="contenedorTextoTarjeta">
           <div className='calculoTarjetas tarjetaPromedio'>
             <h1>{calcularPromedioGanancias()}<span> usdt</span></h1>
