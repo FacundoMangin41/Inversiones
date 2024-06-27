@@ -1,9 +1,10 @@
 .formularioTabla{
-    height: 85vh;
+    min-height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 0 !important;
 }
 
 .recuadroFormulario{
@@ -15,6 +16,7 @@
     background-color: rgba(240, 248, 255, 0.733);
     padding: 2rem;
     border-radius: 10px;
+    margin: 2rem 0;
 }
 .recuadroFormulario h1{
     color: black;
