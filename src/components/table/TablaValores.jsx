@@ -42,8 +42,12 @@ export default function TablaValores() {
 
   const [editRowId, setEditRowId] = useState(null);
 
-  useEffect(() => {
+  // useEffect para cargar el valor de USDTFinal del localStorage en el campo de USDT Invertido
+  React.useEffect(() => {
     localStorage.setItem('rows', JSON.stringify(rows));
+    if (rows.length > 0) {
+      localStorage.setItem('USDTFinal', rows[rows.length - 1].final);
+    }
   }, [rows]);
 
   const handleExport = () => {
@@ -112,10 +116,36 @@ export default function TablaValores() {
         ...row,
         id: `imported-${Date.now()}-${index}`
       }));
-      setRows((prevRows) => [...prevRows, ...newRows]);
+      setRows((prevRows) => {
+        const updatedRows = [...prevRows, ...newRows];
+
+        // Verificar y convertir las fechas
+        const mostRecentRow = updatedRows.reduce((latest, row) => {
+          // Formatear fecha para que la comparacion no falle 
+          const parseDate = (dateStr) => {
+            const [day, month, year] = dateStr.split('/').map(Number);
+            return new Date(year, month - 1, day); // Month is 0-indexed in JS
+          };
+          const rowDate = parseDate(row.fecha);
+          const latestDate = parseDate(latest.fecha);
+          return rowDate > latestDate ? row : latest;
+        }, updatedRows[0]);
+
+        // console.log('Most recent row:', mostRecentRow);
+        // Guardar en sessionStorage el valor de row.final
+        if (mostRecentRow && mostRecentRow.final) {
+          localStorage.setItem('USDTFinal', mostRecentRow.final);
+          // console.log('Saved to sessionStorage:', mostRecentRow.final);
+        }
+        return updatedRows;
+      });
     };
     reader.readAsArrayBuffer(file);
   };
+
+
+
+
 
   const handleProcessRowUpdate = (newRow) => {
     const gananciaDiaria = parseFloat(newRow.final) - parseFloat(newRow.invertido);

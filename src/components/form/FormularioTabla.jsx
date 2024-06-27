@@ -7,29 +7,43 @@ import SaveIcon from '@mui/icons-material/Save';
 import { useNavigate } from "react-router-dom";
 import CircularProgress from '@mui/material/CircularProgress';
 
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import dayjs, { Dayjs } from 'dayjs';
+
 const inputStyle = {
   backgroundColor: 'var(--fondoContenedoresFormulario)',
   marginRight: 2,
-  borderRadius: 1, // Radio de borde
+  borderRadius: 1,
 };
 
-const monedas = ['BTC', 'ETH', 'TRX', 'SOL', 'SHX', 'BNB', 'ACRIS', 'BY', 'AVAX', 'XBH', 'FIL', 
-  'BTAR', 'DOT', 'UNIT', 'RADF  ETC', 'SOX', 'ADA', 'FAU', 'XLM', 'CMR', 'DOGE', 'ZXQ', 'UNIBOT', 
+const monedas = ['BTC', 'ETH', 'TRX', 'SOL', 'SHX', 'BNB', 'ACRIS', 'BY', 'AVAX', 'XBH', 'FIL',
+  'BTAR', 'DOT', 'UNIT', 'RADF  ETC', 'SOX', 'ADA', 'FAU', 'XLM', 'CMR', 'DOGE', 'ZXQ', 'UNIBOT',
   'MRF', 'MATIC', 'ENGR', 'DTQ', 'LTC', 'SHIB'];
 
 export default function FormularioTabla({ onAdd }) {
-
   const navigate = useNavigate();
-  
+
   const [formData, setFormData] = React.useState({
-    fecha: '',
+    fecha: '', // Mantén fecha como una cadena inicialmente vacía
     moneda: '',
     invertido: '',
     final: '',
     facturacionTotal: '',
   });
-  
+
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+
+  // useEffect para cargar el valor de USDTFinal del localStorage en el campo de USDT Invertido
+  React.useEffect(() => {
+    const USDTFinal = localStorage.getItem('USDTFinal');
+    if (USDTFinal) {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        invertido: USDTFinal,
+      }));
+    }
+  }, []); // Se ejecuta una vez al cargar el componente
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -46,21 +60,29 @@ export default function FormularioTabla({ onAdd }) {
     });
   };
 
+  const handleDatePickerChange = (date) => {
+    // date es un objeto Dayjs, conviértelo a una cadena de fecha
+    setFormData({
+      ...formData,
+      fecha: date.format('DD/MM/YYYY'),
+    });
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     const { final, invertido, facturacionTotal } = formData;
     const gananciaDiaria = parseFloat(final) - parseFloat(invertido);
     const tasaTramitacion = parseFloat(facturacionTotal) - parseFloat(final);
-    
+
     const newData = {
       ...formData,
       gananciaDiaria: parseFloat(gananciaDiaria.toFixed(8)),
       tasaTramitacion: parseFloat(tasaTramitacion.toFixed(8)),
     };
-    
+
     onAdd(newData);
-    
+
     setFormData({
       fecha: '',
       moneda: '',
@@ -79,16 +101,18 @@ export default function FormularioTabla({ onAdd }) {
     <div style={{ position: 'relative' }}>
       <form onSubmit={handleFormSubmit} style={{ marginBottom: 20 }} className='formularioTabla'>
         <div className="recuadroFormulario">
-          <h1>Registrar Inversion</h1>
-          <TextField
-            label="Fecha"
-            name="fecha"
-            value={formData.fecha}
-            onChange={handleInputChange}
-            variant="outlined"
-            required
-            sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0}} // Ancho específico para fecha
-          />
+          <h1>Registrar Inversión</h1>
+          <DemoContainer components={['DatePicker']}>
+            <DatePicker
+              className="selector-fecha"
+              format="DD/MM/YYYY"
+              value={dayjs(formData.fecha)} // Usa dayjs para convertir la fecha a Dayjs
+              onChange={handleDatePickerChange}
+              label="Fecha"
+              required
+              sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0 }}
+            />
+          </DemoContainer>
           <Autocomplete
             freeSolo
             options={monedas}
@@ -107,7 +131,7 @@ export default function FormularioTabla({ onAdd }) {
                 name="moneda"
                 variant="outlined"
                 required
-                sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0}} // Ancho específico para moneda
+                sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0 }}
               />
             )}
           />
@@ -119,7 +143,7 @@ export default function FormularioTabla({ onAdd }) {
             variant="outlined"
             type="number"
             required
-            sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0}} // Ancho específico para USDT Invertido
+            sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0 }}
           />
           <TextField
             label="USDT Final (con impuestos)"
@@ -129,17 +153,17 @@ export default function FormularioTabla({ onAdd }) {
             variant="outlined"
             required
             type="number"
-            sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0}} // Ancho específico para USDT Final
+            sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0 }}
           />
           <TextField
-            label="Facturacion Total (con impuestos)"
+            label="Facturación Total (con impuestos)"
             name="facturacionTotal"
             value={formData.facturacionTotal}
             onChange={handleInputChange}
             variant="outlined"
             type="number"
             required
-            sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0 }} // Ancho específico para Facturacion Total
+            sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0 }}
           />
           <Button type="submit" variant="contained" color="secondary" className='botonFormulario' disabled={isSubmitting}>
             <SaveIcon />Guardar
@@ -156,7 +180,6 @@ export default function FormularioTabla({ onAdd }) {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          // backgroundColor: 'var(--fondoCirculoEspera)',
           zIndex: 9999,
         }}>
           <CircularProgress size={80} color="secondary" />
