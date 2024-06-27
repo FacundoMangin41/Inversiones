@@ -9,6 +9,7 @@ import BotonHamburguesa from "../header/BotonHamburguesa";
 import logo from "../../assets/logo.png";
 
 import Button from '@mui/material/Button';
+import BotonRedesSociales from './BotonRedesSociales';
 
 
 
@@ -68,7 +69,7 @@ export default function ButtonAppBar() {
                 <Link to="/estadisticas" className="buscadoresSidebarPc-link">Estadisticas</Link>
               </div>
 
-              {/* <BotonRedesSociales/> */}
+              <BotonRedesSociales/>
 
             </nav>
           </div>

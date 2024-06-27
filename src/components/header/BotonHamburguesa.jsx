@@ -57,7 +57,7 @@ const BotonHamburguesa = () => {
         </div>
         <Divider className="divider" />
         <div className="pie-de-pagina">
-        <p><span>Programador</span> Mangin Facundo</p>
+        <p><span>Programador</span> Facundo Mangin</p>
       </div>
       </List>
     </Box>
