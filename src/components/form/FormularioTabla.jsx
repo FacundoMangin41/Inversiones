@@ -146,7 +146,7 @@ export default function FormularioTabla({ onAdd }) {
             sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0 }}
           />
           <TextField
-            label="USDT Final (con impuestos)"
+            label="Activos Totales (USDT)"
             name="final"
             value={formData.final}
             onChange={handleInputChange}

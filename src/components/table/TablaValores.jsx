@@ -234,7 +234,7 @@ export default function TablaValores() {
       ),
     },
     {
-      field: 'final', headerName: 'USDT Final', width: 230, editable: true,
+      field: 'final', headerName: 'Activos Totales (USDT)', width: 230, editable: true,
       renderCell: (params) => (
         <Chip
           label={params.value}
