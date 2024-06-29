@@ -1,0 +1,195 @@
+.Tarjetas{
+  border: 3px solid #e38445;
+  border-radius: 10px !important;
+  width: clamp(1rem, 32rem, 90%);
+  width: 100%;
+  height: 14.5rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 425px){
+  .Tarjetas{
+    padding-bottom: 2rem;
+    height: 100%;
+  }
+}
+
+
+.tarjetaGanancias{
+  background: var(--botonPortada) !important;
+}
+.tarjetaGanancias h1{
+  color: aliceblue;
+}
+
+.tarjetaPromedio{
+  background: var(--botonPortada) !important;
+}
+.tarjetaPromedio h1{
+  color: aliceblue;
+}
+
+
+.contenedorTarjeta{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+}
+
+@media (max-width: 425px){
+  .contenedorTarjeta{
+    gap: 1rem;
+  }
+}
+
+.iconoTarjeta{
+  font-size: 3rem !important;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: #e38445;
+  border: 2px solid aliceblue;
+  color: rgb(250, 243, 233);
+  width: 30%;
+}
+
+@media (max-width: 425px){
+  .iconoTarjeta{
+    font-size: 2rem !important;
+    padding: 0.6rem;
+  }
+}
+
+.calculoTarjetas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+  width: 50%;
+}
+
+.calculoTarjetas h1{
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  font-size: 2rem;
+  padding: 0.2rem 1rem;
+  background-color: #e38445;
+  border-radius: 10px;
+  border: 2px solid aliceblue;
+  display: flex;
+}
+
+@media (max-width: 425px){
+  .calculoTarjetas h1{
+    font-size: 1.5rem;
+  }
+}
+
+.textoTarjetas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.75rem;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 700 !important;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding-top: 2rem !important;
+}
+
+
+@media (max-width: 1440px){
+  .textoTarjetas{
+    font-size: 1.2rem;
+  }
+}
+
+
+
+/* =================================================================
+   ========================= Tajetas lado derecho ==================
+   =================================================================*/
+  .ContenedosTarjetasDerecha{
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    background: var(--botonPortada);
+    border-radius: 10px;
+    flex-direction: column;
+    border: 3px solid var(--colorIconosLadoDerechoMicritarjetas);
+  }
+
+  .subContenedosTarjetasDerecha{
+    padding: 0 1.5rem 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .contenedorEstadisticasTarjetas{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .tituloTarjetaLadoDerecho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tituloTarjetaLadoDerecho h1{
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 700 !important;
+  }
+
+
+  .estadisticasTarjetas{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--promediosLadoDerechoMicritarjetas);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid aliceblue;
+    box-sizing: border-box;
+  }
+  
+  .IconoTarjetaLadoDerecho{
+    font-size: 2rem !important;
+    padding: 0.3rem;
+    background-color: var(--colorIconosLadoDerechoMicritarjetas);
+    border-radius: 50%;
+  }
+
+  .estadisticasTarjetas p{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+  }
+
+  .estadisticasTarjetas p span{
+    margin: 0;
+    display: flex;
+    gap: 0.1rem;
+    font-size: 1.4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700; 
+    background-color: var(--botonPortada);
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 1440px){
+    .estadisticasTarjetas p span{
+      font-size: 1rem;
+    }
+  }

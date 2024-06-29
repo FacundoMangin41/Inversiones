@@ -1,0 +1,67 @@
+.subContenedorEstadisticas{
+    width: 96%;
+    display: flex;
+    background-color: rgba(240, 248, 255, 0.733);
+    padding: 1rem;
+    gap: 2rem;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.estadisticasLadoIzquierdo{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.graficosEstadisticasLadoIzquierdo{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.estadisticasLadoDerecho{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.tarjetasPrincipales{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 1440px){
+.estadisticasLadoIzquierdo{
+    width: 100%;
+}
+
+.estadisticasLadoDerecho{
+    width: 100%;
+}
+    .tarjetasPrincipales{
+        display: flex;
+        flex-direction: column;
+    }
+  }
+
+  @media (max-width: 1024px){
+    .tarjetasPrincipales{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .graficosEstadisticasLadoIzquierdo{
+        display: none !important;
+    }
+
+    .subContenedorEstadisticas{
+        display: flex;
+        flex-direction: column;
+    }
+  }

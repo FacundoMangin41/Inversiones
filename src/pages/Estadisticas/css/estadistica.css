@@ -1,14 +1,14 @@
 .contenedorEstadisticas{
-    width: 100vw;
-    min-height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-bottom: 38px;
+    padding-top: 2rem;
+
 }
 
-.PagesEstadisticas{
+/* .PagesEstadisticas{
     width: 95vw ;
     height: 100%;
     display: flex;
@@ -29,4 +29,4 @@
     .PagesEstadisticas{
         flex-direction: column;
     }
-}
+} */
