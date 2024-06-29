@@ -81,7 +81,13 @@
   border-radius: 10px;
   border: 2px solid aliceblue;
   display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
+.calculoTarjetas h1 span{
+  font-size: 1.5rem;
+}
+
 
 @media (max-width: 425px){
   .calculoTarjetas h1{
@@ -186,6 +192,7 @@
     background-color: var(--botonPortada);
     padding: 0.2rem 0.6rem;
     border-radius: 10px;
+    gap: ;
   }
 
   @media (max-width: 1440px){

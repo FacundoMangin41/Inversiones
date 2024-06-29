@@ -3,7 +3,8 @@ import PromedioTotal from "../../Logica/Promedios/PromedioTotal";
 import PromedioUltimaSemana from "../../Logica/Promedios/PromedioUltimaSemana";
 import PromedioUltimoMes from "../../Logica/Promedios/PromedioUltimoMes";
 
-import AnalyticsIcon from '@mui/icons-material/Analytics';
+import QueryStatsIcon from '@mui/icons-material/QueryStats';
+import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 
 
 import "../css/tarjetas.css";
@@ -17,10 +18,10 @@ export default function Promedios() {
         </div>
         <div className="contenedorEstadisticasTarjetas">
           <div className="estadisticasTarjetas">
-            <p> <AnalyticsIcon className='IconoTarjetaLadoDerecho' /> Total ultima semana: <span><PromedioUltimaSemana /> usdt</span></p>
+            <p> <LeaderboardIcon className='IconoTarjetaLadoDerecho' /> Total ultima semana: <span><PromedioUltimaSemana /> usdt</span></p>
           </div>
           <div className="estadisticasTarjetas">
-            <p> <AnalyticsIcon className='IconoTarjetaLadoDerecho' /> Total ultimo mes: <span><PromedioUltimoMes /> usdt</span></p>
+            <p> <QueryStatsIcon className='IconoTarjetaLadoDerecho' /> Total ultimo mes: <span><PromedioUltimoMes /> usdt</span></p>
           </div>
         </div>
       </div>

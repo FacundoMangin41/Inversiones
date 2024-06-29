@@ -15,7 +15,7 @@ const TarjetaGananciaDiaria = () => {
       <div className='contenedorTarjeta '>
         <SavingsIcon className='iconoTarjeta' />
         <div className='calculoTarjetas '>
-          <h1>{SumaGananciasDiarias()}<span> usdt</span></h1>
+          <h1>{SumaGananciasDiarias()}<span>usdt</span></h1>
         </div>
       </div>
     </Card>

@@ -2,7 +2,8 @@ import React from 'react';
 import SumaGananciasUltimaSemana from "../../Logica/Ganancias/SumaGananciasUltimaSemana";
 import SumaGananciasUltimoMes from "../../Logica/Ganancias/SumaGananciasUltimoMes";
 
-import AnalyticsIcon from '@mui/icons-material/Analytics';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import PaidIcon from '@mui/icons-material/Paid';
 
 
 import "../css/tarjetas.css";
@@ -16,10 +17,10 @@ export default function Ganancias() {
         </div>
         <div className="contenedorEstadisticasTarjetas">
           <div className="estadisticasTarjetas">
-            <p> <AnalyticsIcon className='IconoTarjetaLadoDerecho' /> Total ultima semana: <span><SumaGananciasUltimaSemana /> usdt</span></p>
+            <p> <AttachMoneyIcon className='IconoTarjetaLadoDerecho' /> Total ultima semana: <span><SumaGananciasUltimaSemana /> usdt</span></p>
           </div>
           <div className="estadisticasTarjetas">
-            <p> <AnalyticsIcon className='IconoTarjetaLadoDerecho' /> Total ultimo mes: <span><SumaGananciasUltimoMes /> usdt</span></p>
+            <p> <PaidIcon className='IconoTarjetaLadoDerecho' /> Total ultimo mes: <span><SumaGananciasUltimoMes /> usdt</span></p>
           </div>
         </div>
       </div>

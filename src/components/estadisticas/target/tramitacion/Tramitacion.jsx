@@ -3,8 +3,9 @@ import SumaTasaTramitacion from "../../Logica/Tramitaciones/SumaTasaTramitacion"
 import SumaTasaTramitacionUltimaSemana from "../../Logica/Tramitaciones/SumaTasaTramitacionUltimaSemana";
 import SumaTasaTramitacionUltimoMes from "../../Logica/Tramitaciones/SumaTasaTramitacionUltimoMes";
 
-import AnalyticsIcon from '@mui/icons-material/Analytics';
-
+import CreditCardOffIcon from '@mui/icons-material/CreditCardOff';
+import MoneyOffIcon from '@mui/icons-material/MoneyOff';
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 
 import "../css/tarjetas.css";
 
@@ -17,13 +18,13 @@ export default function Tramitacion() {
         </div>
         <div className="contenedorEstadisticasTarjetas">
           <div className="estadisticasTarjetas">
-            <p> <AnalyticsIcon className='IconoTarjetaLadoDerecho' /> Total: <span><SumaTasaTramitacion /> usdt</span></p>
+            <p> <CreditCardOffIcon className='IconoTarjetaLadoDerecho' /> Total: <span><SumaTasaTramitacion /> usdt</span></p>
           </div>
           <div className="estadisticasTarjetas">
-            <p> <AnalyticsIcon className='IconoTarjetaLadoDerecho' /> Total ultima semana: <span><SumaTasaTramitacionUltimaSemana /> usdt</span></p>
+            <p> <MoneyOffIcon className='IconoTarjetaLadoDerecho' /> Total ultima semana: <span><SumaTasaTramitacionUltimaSemana /> usdt</span></p>
           </div>
           <div className="estadisticasTarjetas">
-            <p> <AnalyticsIcon className='IconoTarjetaLadoDerecho' /> Total ultimo mes: <span><SumaTasaTramitacionUltimoMes /> usdt</span></p>
+            <p> <CurrencyExchangeIcon className='IconoTarjetaLadoDerecho' /> Total ultimo mes: <span><SumaTasaTramitacionUltimoMes /> usdt</span></p>
           </div>
         </div>
       </div>
