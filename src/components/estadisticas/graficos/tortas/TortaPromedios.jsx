@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { PieChart } from '@mui/x-charts/PieChart';
 import Stack from '@mui/material/Stack';
-import { calcularPromedioGanancias } from "../Logica/Promedios/PromedioTotal";
-import { calcularPromedioGananciasUltimaSemana } from "../Logica/Promedios/PromedioUltimaSemana";
-import { calcularPromedioGananciasUltimoMes } from "../Logica/Promedios/PromedioUltimoMes";
+import { calcularPromedioGanancias } from "../../Logica/Promedios/PromedioTotal";
+import { calcularPromedioGananciasUltimaSemana } from "../../Logica/Promedios/PromedioUltimaSemana";
+import { calcularPromedioGananciasUltimoMes } from "../../Logica/Promedios/PromedioUltimoMes";
 import "./Torta.css";
 
 export default function TortaPromedios() {

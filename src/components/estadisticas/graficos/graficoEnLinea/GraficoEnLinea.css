@@ -1,0 +1,15 @@
+.line-chart-container {
+    width: 100%;
+    background-color: aliceblue;
+  }
+
+  .chart-container{
+    width: 100% !important;
+  }
+
+.containerGrafico{
+  background: aliceblue;
+  border-radius: 10px;
+  border: 3px solid #e38445;
+  box-sizing: border-box;
+}

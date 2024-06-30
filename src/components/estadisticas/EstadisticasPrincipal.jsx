@@ -5,8 +5,10 @@ import TarjetaPromedioPorDia from "../estadisticas/target/promedio/TarjetaPromed
 import Promedios from "../estadisticas/target/promedio/Promedios";
 import Ganancias from "../estadisticas/target/ganancias/Ganancias";
 import Tramitacion from './target/tramitacion/Tramitacion';
-import GraficoEnLinea from "./graficos/GraficoEnLinea";
-import TortaPromedios from "./graficos/TortaPromedios";
+import GraficoGananciaPorDia from "./graficos/graficoEnLinea/GraficoGananciaPorDia";
+import GraficoGananciaSemanal from "./graficos/graficoEnLinea/GraficoGananciaSemanal";
+import GraficoGananciaPorMes from "./graficos/graficoEnLinea/GraficoGananciaPorMes";
+import TortaPromedios from "./graficos/tortas/TortaPromedios";
 import Box from '@mui/material/Box';
 
 function EstadisticasPrincipal() {
@@ -20,8 +22,10 @@ function EstadisticasPrincipal() {
                     <TarjetaPromedioPorDia />
                 </div>
                 <div className="graficosEstadisticasLadoIzquierdo">
-                    <GraficoEnLinea />
-                    <TortaPromedios />
+                    <GraficoGananciaPorDia/>
+                    <GraficoGananciaSemanal />
+                    <GraficoGananciaPorMes/>
+                    {/* <TortaPromedios /> */}
                 </div>
             </div>
 

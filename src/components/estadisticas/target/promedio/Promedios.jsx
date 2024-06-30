@@ -14,14 +14,14 @@ export default function Promedios() {
     <div className="ContenedosTarjetasDerecha">
       <div className="subContenedosTarjetasDerecha">
         <div className="tituloTarjetaLadoDerecho">
-          <h1>Promedio de Ganancia</h1>
+          <h1>Promedio de Ganancia por dia</h1>
         </div>
         <div className="contenedorEstadisticasTarjetas">
           <div className="estadisticasTarjetas">
-            <p> <LeaderboardIcon className='IconoTarjetaLadoDerecho' /> Total ultima semana: <span><PromedioUltimaSemana /> usdt</span></p>
+            <p> <LeaderboardIcon className='IconoTarjetaLadoDerecho' /> Ultima semana: <span><PromedioUltimaSemana /> usdt</span></p>
           </div>
           <div className="estadisticasTarjetas">
-            <p> <QueryStatsIcon className='IconoTarjetaLadoDerecho' /> Total ultimo mes: <span><PromedioUltimoMes /> usdt</span></p>
+            <p> <QueryStatsIcon className='IconoTarjetaLadoDerecho' /> Ultimo mes: <span><PromedioUltimoMes /> usdt</span></p>
           </div>
         </div>
       </div>

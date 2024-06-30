@@ -192,7 +192,6 @@
     background-color: var(--botonPortada);
     padding: 0.2rem 0.6rem;
     border-radius: 10px;
-    gap: ;
   }
 
   @media (max-width: 1440px){
