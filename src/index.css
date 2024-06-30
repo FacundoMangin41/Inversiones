@@ -51,6 +51,9 @@
 
   --promediosLadoDerechoMicritarjetas: #03424296;
   --colorIconosLadoDerechoMicritarjetas: #e38445;
+  --sombrasEstadisticas: 3px 3px 9px 3px rgba(0, 0, 0, 0.3);
+
+
   /* -----------------chips------------ */
   --usdtFinal: #cbe7ab;
   --usdtInvertido: #ffdc69;
