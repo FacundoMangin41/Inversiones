@@ -14,4 +14,63 @@
   border: 3px solid #e38445;
   box-sizing: border-box;
   box-shadow: var(--sombrasEstadisticas)!important;
+  height: 100%;
 }
+
+.selectorDeFechas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.fechasGrafico{
+  display: flex;
+  gap: 1rem;
+  width: 30rem;
+  padding: 0 2rem 1rem;
+}
+
+@media (max-width: 700px) {
+  .fechasGrafico{
+    display: flex;
+    flex-direction: column;
+    width: 12.8rem;
+  }
+}
+
+
+
+
+
+
+/* GraficoEnLinea.css */
+
+
+.MuiInputLabel-shrink {
+  background: aliceblue;
+  padding: 0.1rem 0.5rem !important;
+  transform: translate(14px, -6px) scale(0.75);
+  border-radius: 5px;
+  color: rgb(0, 0, 0) !important;
+  font-weight: 500 !important;
+}
+
+/* .MuiFormControl-root {
+  position: relative;
+  margin-top: 1rem;
+} */
+
+/* .MuiInputBase-root {
+  padding: 10px;
+} */
+
+
+/* .containerGrafico {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
