@@ -219,7 +219,7 @@ export default function TablaValores() {
     { field: 'fecha', headerName: 'Fecha', width: 150, editable: true, },
     { field: 'moneda', headerName: 'Moneda', width: 130, editable: true },
     {
-      field: 'invertido', headerName: 'Activos Totales (Antes de ser invertidos)', width: 310, editable: true,
+      field: 'invertido', headerName: 'Activos Totales (Antes de ser invertidos)', width: 350, editable: true,
       renderCell: (params) => (
         <Chip
           label={params.value}
@@ -234,7 +234,7 @@ export default function TablaValores() {
       ),
     },
     {
-      field: 'final', headerName: 'Activos Totales (Despues de ser invertidos)', width: 310, editable: true,
+      field: 'final', headerName: 'Activos Totales (Despues de ser invertidos)', width: 350, editable: true,
       renderCell: (params) => (
         <Chip
           label={params.value}
