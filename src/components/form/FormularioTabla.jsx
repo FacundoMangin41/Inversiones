@@ -71,9 +71,9 @@ export default function FormularioTabla({ onAdd }) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const { final, invertido, facturacionTotal } = formData;
+    const { final, invertido } = formData;
     const gananciaDiaria = parseFloat(final) - parseFloat(invertido);
-    const tasaTramitacion = parseFloat(facturacionTotal) - parseFloat(final);
+    const tasaTramitacion =  parseFloat(final) * 1.01005912185827 / 100;
 
     const newData = {
       ...formData,
@@ -155,7 +155,7 @@ export default function FormularioTabla({ onAdd }) {
             type="number"
             sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0 }}
           />
-          <TextField
+          {/* <TextField
             label="Facturación Total (con impuestos)"
             name="facturacionTotal"
             value={formData.facturacionTotal}
@@ -164,7 +164,7 @@ export default function FormularioTabla({ onAdd }) {
             type="number"
             required
             sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0 }}
-          />
+          /> */}
           <Button type="submit" variant="contained" color="secondary" className='botonFormulario' disabled={isSubmitting}>
             <SaveIcon />Guardar
           </Button>

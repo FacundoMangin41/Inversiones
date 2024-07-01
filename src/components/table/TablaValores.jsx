@@ -51,13 +51,12 @@ export default function TablaValores() {
   }, [rows]);
 
   const handleExport = () => {
-    const exportRows = rows.map(({ id, fecha, moneda, invertido, final, gananciaDiaria, facturacionTotal, tasaTramitacion }) => ({
+    const exportRows = rows.map(({ id, fecha, moneda, invertido, final, gananciaDiaria, tasaTramitacion }) => ({
       fecha,
       moneda,
       invertido,
       final,
       gananciaDiaria,
-      facturacionTotal,
       tasaTramitacion
     }));
 
@@ -112,30 +111,36 @@ export default function TablaValores() {
       const workbook = XLSX.read(data, { type: 'array' });
       const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
       const importedData = XLSX.utils.sheet_to_json(firstSheet);
-      const newRows = importedData.map((row, index) => ({
-        ...row,
-        id: `imported-${Date.now()}-${index}`
-      }));
+      const newRows = importedData.map((row, index) => {
+        const invertido = parseFloat(row.invertido) || 0;
+        const final = parseFloat(row.final) || 0;
+        const gananciaDiaria = final - invertido;
+        const tasaTramitacion = final * 1.01005912185827 / 100;
+
+        return {
+          ...row,
+          id: `imported-${Date.now()}-${index}`,
+          invertido: invertido.toFixed(4),
+          final: final.toFixed(4),
+          gananciaDiaria: gananciaDiaria.toFixed(4),
+          tasaTramitacion: tasaTramitacion.toFixed(4),
+        };
+      });
       setRows((prevRows) => {
         const updatedRows = [...prevRows, ...newRows];
 
-        // Verificar y convertir las fechas
         const mostRecentRow = updatedRows.reduce((latest, row) => {
-          // Formatear fecha para que la comparacion no falle 
           const parseDate = (dateStr) => {
             const [day, month, year] = dateStr.split('/').map(Number);
-            return new Date(year, month - 1, day); // Month is 0-indexed in JS
+            return new Date(year, month - 1, day);
           };
           const rowDate = parseDate(row.fecha);
           const latestDate = parseDate(latest.fecha);
           return rowDate > latestDate ? row : latest;
         }, updatedRows[0]);
 
-        // console.log('Most recent row:', mostRecentRow);
-        // Guardar en sessionStorage el valor de row.final
         if (mostRecentRow && mostRecentRow.final) {
           localStorage.setItem('USDTFinal', mostRecentRow.final);
-          // console.log('Saved to sessionStorage:', mostRecentRow.final);
         }
         return updatedRows;
       });
@@ -149,7 +154,7 @@ export default function TablaValores() {
 
   const handleProcessRowUpdate = (newRow) => {
     const gananciaDiaria = parseFloat(newRow.final) - parseFloat(newRow.invertido);
-    const tasaTramitacion = parseFloat(newRow.facturacionTotal) - parseFloat(newRow.final);
+    const tasaTramitacion =  parseFloat(newRow.final) * 1.01005912185827 / 100;
 
     const updatedRow = {
       ...newRow,
@@ -263,8 +268,8 @@ export default function TablaValores() {
         />
       ),
     },
-    { field: 'facturacionTotal', headerName: 'Facturacion Total (con impuestos)', width: 260, editable: true },
-    { field: 'tasaTramitacion', headerName: 'Tasa de tramitacion (descuentos)', width: 260, editable: true },
+    // { field: 'facturacionTotal', headerName: 'Facturacion Total (con impuestos)', width: 260, editable: true },
+    { field: 'tasaTramitacion', headerName: 'Descuento de la operacion', width: 260, editable: true },
     {
       field: 'actions',
       headerName: 'Actions',
