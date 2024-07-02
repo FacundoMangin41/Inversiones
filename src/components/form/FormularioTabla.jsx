@@ -25,7 +25,7 @@ export default function FormularioTabla({ onAdd }) {
   const navigate = useNavigate();
 
   const [formData, setFormData] = React.useState({
-    fecha: '',
+    fecha: dayjs().format('DD/MM/YYYY'), // Establece la fecha predeterminada al día actual
     moneda: '',
     invertido: '',
     final: '',
@@ -84,7 +84,7 @@ export default function FormularioTabla({ onAdd }) {
     onAdd(newData);
 
     setFormData({
-      fecha: '',
+      fecha: dayjs().format('DD/MM/YYYY'), // Restablece la fecha al día actual
       moneda: '',
       invertido: '',
       final: '',
@@ -106,7 +106,7 @@ export default function FormularioTabla({ onAdd }) {
             <DatePicker
               className="selector-fecha"
               format="DD/MM/YYYY"
-              value={formData.fecha ? dayjs(formData.fecha, 'DD/MM/YYYY') : null} // Convierta a objeto Dayjs
+              value={dayjs(formData.fecha, 'DD/MM/YYYY')} // Convierta a objeto Dayjs
               onChange={handleDatePickerChange}
               label="Fecha"
               required
