@@ -9,7 +9,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
 
 const inputStyle = {
   backgroundColor: 'var(--fondoContenedoresFormulario)',
@@ -25,7 +25,7 @@ export default function FormularioTabla({ onAdd }) {
   const navigate = useNavigate();
 
   const [formData, setFormData] = React.useState({
-    fecha: '', // Mantén fecha como una cadena inicialmente vacía
+    fecha: '',
     moneda: '',
     invertido: '',
     final: '',
@@ -34,7 +34,6 @@ export default function FormularioTabla({ onAdd }) {
 
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-  // useEffect para cargar el valor de USDTFinal del localStorage en el campo de USDT Invertido
   React.useEffect(() => {
     const USDTFinal = localStorage.getItem('USDTFinal');
     if (USDTFinal) {
@@ -43,7 +42,7 @@ export default function FormularioTabla({ onAdd }) {
         invertido: USDTFinal,
       }));
     }
-  }, []); // Se ejecuta una vez al cargar el componente
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -61,11 +60,12 @@ export default function FormularioTabla({ onAdd }) {
   };
 
   const handleDatePickerChange = (date) => {
-    // date es un objeto Dayjs, conviértelo a una cadena de fecha
-    setFormData({
-      ...formData,
-      fecha: date.format('DD/MM/YYYY'),
-    });
+    if (date) {
+      setFormData({
+        ...formData,
+        fecha: date.format('DD/MM/YYYY'),
+      });
+    }
   };
 
   const handleFormSubmit = (e) => {
@@ -73,7 +73,7 @@ export default function FormularioTabla({ onAdd }) {
     setIsSubmitting(true);
     const { final, invertido } = formData;
     const gananciaDiaria = parseFloat(final) - parseFloat(invertido);
-    const tasaTramitacion =  parseFloat(final) * 1.01005912185827 / 100;
+    const tasaTramitacion = parseFloat(final) * 1.01005912185827 / 100;
 
     const newData = {
       ...formData,
@@ -106,7 +106,7 @@ export default function FormularioTabla({ onAdd }) {
             <DatePicker
               className="selector-fecha"
               format="DD/MM/YYYY"
-              value={dayjs(formData.fecha)} // Usa dayjs para convertir la fecha a Dayjs
+              value={formData.fecha ? dayjs(formData.fecha, 'DD/MM/YYYY') : null} // Convierta a objeto Dayjs
               onChange={handleDatePickerChange}
               label="Fecha"
               required
@@ -155,16 +155,6 @@ export default function FormularioTabla({ onAdd }) {
             type="number"
             sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0 }}
           />
-          {/* <TextField
-            label="Facturación Total (con impuestos)"
-            name="facturacionTotal"
-            value={formData.facturacionTotal}
-            onChange={handleInputChange}
-            variant="outlined"
-            type="number"
-            required
-            sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0 }}
-          /> */}
           <Button type="submit" variant="contained" color="secondary" className='botonFormulario' disabled={isSubmitting}>
             <SaveIcon />Guardar
           </Button>
