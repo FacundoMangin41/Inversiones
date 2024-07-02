@@ -136,7 +136,7 @@ export default function FormularioTabla({ onAdd }) {
             )}
           />
           <TextField
-            label="USDT Invertido"
+            label="Activos (Antes de ser invertidos)"
             name="invertido"
             value={formData.invertido}
             onChange={handleInputChange}
@@ -146,7 +146,7 @@ export default function FormularioTabla({ onAdd }) {
             sx={{ ...inputStyle, width: 'clamp(10rem, 22rem, 80vw)', margin: 0 }}
           />
           <TextField
-            label="Activos Totales (USDT)"
+            label="Activos (Despues de ser invertidos)"
             name="final"
             value={formData.final}
             onChange={handleInputChange}
