@@ -77,8 +77,8 @@ export default function FormularioTabla({ onAdd }) {
 
     const newData = {
       ...formData,
-      gananciaDiaria: parseFloat(gananciaDiaria.toFixed(8)),
-      tasaTramitacion: parseFloat(tasaTramitacion.toFixed(8)),
+      gananciaDiaria: parseFloat(gananciaDiaria.toFixed(4)),
+      tasaTramitacion: parseFloat(tasaTramitacion.toFixed(4)),
     };
 
     onAdd(newData);
