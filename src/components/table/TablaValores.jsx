@@ -158,8 +158,8 @@ export default function TablaValores() {
 
     const updatedRow = {
       ...newRow,
-      gananciaDiaria: gananciaDiaria.toFixed(8),
-      tasaTramitacion: tasaTramitacion.toFixed(8),
+      gananciaDiaria: gananciaDiaria.toFixed(4),
+      tasaTramitacion: tasaTramitacion.toFixed(4),
     };
 
     setRows((prevRows) => prevRows.map((row) => (row.id === updatedRow.id ? updatedRow : row)));
